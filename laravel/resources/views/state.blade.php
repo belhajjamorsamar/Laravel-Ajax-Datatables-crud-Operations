@@ -9,12 +9,13 @@
 </head>
 <body>
     <div class="container">
-<h1 class="text-center">Laravel Ajax</h1>
+<h1 class="text-center">Laravel Ajax Crud Operations </h1>
+<hr>
 <div class="row mt-5">
     <div class="col-6 offset-3">
-<form action="">
+<form action="" id="myForm">
     <div class="form-group">
-        <label for="">Seelect State</label>
+        <label for="">Select State</label>
         <select name="" id="" class="form-control">
         @foreach($states as $state)
         <option value="{{ $state->id }}">{{ $state->state_name }}</option>
@@ -22,19 +23,39 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="">city name</label>
+        <label for="">City Name</label>
         <input type="text" name="city_name" class="form-control"></div>
 
-    <button class="btn btn-success">Add city</button>
+    <button class="btn btn-success" id="submit">Add city</button>
 
 </form>
     </div>
 </div>
-
-<div class="row">
+<hr>
 
 </div>
 </div>
-    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#submit').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url:"",
+                type:"post",
+                dataType :"json",
+                data:('#myForm').serialize(),
+                success:function(response){
+                    console.log(response);
+                }
+
+
+            });
+
+        })
+    });
+</script>
+
 </body>
 </html>
