@@ -15,8 +15,11 @@
 <form action="">
     <div class="form-group">
         <label for="">Seelect State</label>
-        <select name="" id="" class="form-control"></select>
-        <option value=""></option>
+        <select name="" id="" class="form-control">
+        @foreach($states as $state)
+        <option value="{{ $state->id }}">{{ $state->state_name }}</option>
+        @endforeach
+        </select>
     </div>
     <div class="form-group">
         <label for="">city name</label>

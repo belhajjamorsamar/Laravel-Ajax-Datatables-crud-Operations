@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('state2s', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->string('state_name');
+            $table->integer('state_id');
+            $table->string('city_name');
+            $table->enum('status',['Active', 'Inactive'])->default('Active');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('state2s');
+        Schema::dropIfExists('cities');
     }
 };
