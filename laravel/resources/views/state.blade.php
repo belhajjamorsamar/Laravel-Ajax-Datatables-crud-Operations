@@ -12,12 +12,16 @@
 
 <div class="container">
     <h1 class="text-center">Laravel Ajax </h1>
-    <div class="row">
-        <div class="col">
+    <div class="row mt-5">
+        <div class="col-7 offset-3">
            <form>
             <div class="form-group">
                 <label for="">Select state</label>
-                <select name="state"  class="form-control">
+                <select name="state"  class="form-control"> 
+                    @foreach($states as $state)
+                    <option value="">{{ $state->state_name }}</option>
+                    @endforeach
+
                 </select>
             </div>
             <div class="form-group">
@@ -30,6 +34,7 @@
            </form>
         </div>
     </div>
+    <div class="row"></div>
 </div>  
 </body>
 </html>
